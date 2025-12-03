@@ -3,307 +3,671 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AMIE FAMILY — One Family in Christ, Unity in Love</title>
+  <title>AMIE FAMILY — Unity in Faith & Love</title>
 
   <style>
-    /* ---------- Root variables ---------- */
+    /* ---------- Design Philosophy: Centered, Organic Flow ---------- */
     :root{
-      --bg:#f6fbff;
-      --card:#ffffff;
-      --muted:#6b7280;
-      --accent:#3b82f6; /* beloved blue */
-      --accent-2:#f59e0b; /* warm gold */
-      --accent-3:#fb7185; /* soft coral */
-      --glass: rgba(255,255,255,0.6);
-      --shadow: 0 8px 24px rgba(2,6,23,0.08);
-      --radius:14px;
-      --max-width:1100px;
+      --primary:#6366f1;
+      --secondary:#ec4899;
+      --tertiary:#14b8a6;
+      --neutral-bg:#fafafa;
+      --surface:#ffffff;
+      --text-primary:#1e293b;
+      --text-muted:#64748b;
+      --border:#e2e8f0;
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
+      --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
+      --spacing:clamp(16px, 4vw, 32px);
     }
 
-    /* Dark mode vars (class .dark on body) */
-    body.dark{
-      --bg: #071027;
-      --card: #071a2b;
-      --muted: #9aa7b8;
-      --glass: rgba(255,255,255,0.03);
-      color: #e6eef8;
+    body.dark-theme{
+      --neutral-bg:#0f172a;
+      --surface:#1e293b;
+      --text-primary:#f1f5f9;
+      --text-muted:#94a3b8;
+      --border:#334155;
     }
 
-    /* ---------- Base ---------- */
-    *{box-sizing:border-box}
-    html,body{height:100%}
+    *{box-sizing:border-box;margin:0;padding:0}
+    
     body{
-      margin:0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      background: linear-gradient(180deg, var(--bg), #fff);
-      color:#0f172a;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.4;
-      padding-bottom:80px; /* space for footer */
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background:var(--neutral-bg);
+      color:var(--text-primary);
+      line-height:1.7;
+      transition:background 0.3s, color 0.3s;
     }
 
-    a{color:var(--accent); text-decoration:none}
-
-    .container{
-      max-width:var(--max-width);
-      margin:28px auto;
-      padding:20px;
+    /* ---------- Centered Container Layout ---------- */
+    .page-wrapper{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      min-height:100vh;
+      padding:var(--spacing);
     }
 
-    /* ---------- Header & Nav ---------- */
-    header.site-header{
-      background: linear-gradient(90deg, rgba(59,130,246,0.08), rgba(251,113,133,0.04));
-      border-radius:16px;
-      padding:18px 20px;
+    .content-width{
+      width:100%;
+      max-width:960px;
+    }
+
+    /* ---------- Top Navigation - Centered ---------- */
+    .top-nav{
+      background:var(--surface);
+      border:1px solid var(--border);
+      border-radius:50px;
+      padding:12px 24px;
+      margin-bottom:var(--spacing);
       display:flex;
       align-items:center;
       justify-content:space-between;
+      gap:20px;
+      box-shadow:var(--shadow-md);
+      width:100%;
+    }
+
+    .identity{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .emblem{
+      width:56px;
+      height:56px;
+      background:linear-gradient(135deg, var(--primary), var(--secondary));
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:24px;
+      font-weight:900;
+      color:white;
+      box-shadow:0 4px 12px rgba(99,102,241,0.3);
+    }
+
+    .title-group h1{
+      font-size:clamp(1rem, 2.5vw, 1.3rem);
+      font-weight:800;
+      background:linear-gradient(90deg, var(--primary), var(--secondary));
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      background-clip:text;
+    }
+
+    .title-group p{
+      font-size:0.8rem;
+      color:var(--text-muted);
+    }
+
+    .nav-links{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+    }
+
+    .nav-links a{
+      padding:8px 16px;
+      border-radius:20px;
+      font-size:0.9rem;
+      font-weight:600;
+      color:var(--text-primary);
+      text-decoration:none;
+      transition:all 0.2s;
+    }
+
+    .nav-links a:hover{
+      background:var(--border);
+      transform:translateY(-2px);
+    }
+
+    .action-buttons{
+      display:flex;
+      gap:8px;
+    }
+
+    .icon-btn{
+      width:40px;
+      height:40px;
+      border-radius:50%;
+      background:var(--surface);
+      border:1px solid var(--border);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+      transition:all 0.2s;
+      font-size:18px;
+    }
+
+    .icon-btn:hover{
+      background:var(--border);
+      transform:scale(1.1);
+    }
+
+    /* ---------- Hero Section - Centered ---------- */
+    .hero-section{
+      text-align:center;
+      padding:var(--spacing) 0;
+      margin-bottom:var(--spacing);
+    }
+
+    .hero-badge{
+      display:inline-block;
+      padding:8px 20px;
+      background:linear-gradient(90deg, rgba(99,102,241,0.1), rgba(236,72,153,0.1));
+      border-radius:30px;
+      font-size:0.85rem;
+      font-weight:700;
+      color:var(--primary);
+      margin-bottom:16px;
+    }
+
+    .hero-section h2{
+      font-size:clamp(2rem, 5vw, 3.5rem);
+      font-weight:900;
+      margin-bottom:16px;
+      line-height:1.2;
+    }
+
+    .hero-section p{
+      font-size:1.1rem;
+      color:var(--text-muted);
+      max-width:640px;
+      margin:0 auto 24px;
+    }
+
+    .cta-group{
+      display:flex;
+      gap:12px;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
+
+    .cta-btn{
+      padding:14px 28px;
+      border-radius:30px;
+      font-weight:700;
+      text-decoration:none;
+      transition:all 0.3s;
+      border:2px solid transparent;
+    }
+
+    .cta-primary{
+      background:linear-gradient(90deg, var(--primary), var(--secondary));
+      color:white;
+      box-shadow:0 4px 16px rgba(99,102,241,0.3);
+    }
+
+    .cta-primary:hover{
+      transform:translateY(-3px);
+      box-shadow:0 6px 24px rgba(99,102,241,0.4);
+    }
+
+    .cta-secondary{
+      background:var(--surface);
+      color:var(--text-primary);
+      border-color:var(--border);
+    }
+
+    .cta-secondary:hover{
+      border-color:var(--primary);
+      background:rgba(99,102,241,0.05);
+    }
+
+    /* ---------- Stats Bar ---------- */
+    .stats-bar{
+      display:flex;
+      justify-content:center;
+      gap:40px;
+      padding:24px;
+      background:var(--surface);
+      border:1px solid var(--border);
+      border-radius:20px;
+      margin-bottom:var(--spacing);
+      box-shadow:var(--shadow-sm);
+      flex-wrap:wrap;
+    }
+
+    .stat-item{
+      text-align:center;
+    }
+
+    .stat-number{
+      font-size:2rem;
+      font-weight:900;
+      background:linear-gradient(135deg, var(--primary), var(--tertiary));
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      background-clip:text;
+    }
+
+    .stat-label{
+      font-size:0.85rem;
+      color:var(--text-muted);
+      text-transform:uppercase;
+      letter-spacing:0.5px;
+    }
+
+    /* ---------- Ticker Announcement ---------- */
+    .ticker-wrapper{
+      background:linear-gradient(90deg, rgba(236,72,153,0.1), rgba(20,184,166,0.1));
+      border-radius:16px;
+      padding:16px;
+      margin-bottom:var(--spacing);
+      overflow:hidden;
+      position:relative;
+    }
+
+    .ticker-content{
+      display:flex;
+      animation:scroll 20s linear infinite;
+      white-space:nowrap;
+    }
+
+    .ticker-content span{
+      padding:0 40px;
+      font-weight:600;
+    }
+
+    @keyframes scroll{
+      from{transform:translateX(0)}
+      to{transform:translateX(-50%)}
+    }
+
+    /* ---------- Member Cards - Masonry-style ---------- */
+    .section-header{
+      text-align:center;
+      margin-bottom:32px;
+    }
+
+    .section-header h2{
+      font-size:2.5rem;
+      font-weight:900;
+      margin-bottom:12px;
+    }
+
+    .section-header p{
+      color:var(--text-muted);
+      max-width:600px;
+      margin:0 auto;
+    }
+
+    .members-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+      gap:24px;
+      margin-bottom:var(--spacing);
+    }
+
+    .member-card{
+      background:var(--surface);
+      border:1px solid var(--border);
+      border-radius:20px;
+      padding:20px;
+      box-shadow:var(--shadow-sm);
+      transition:all 0.3s;
+      cursor:pointer;
+    }
+
+    .member-card:hover{
+      transform:translateY(-8px) scale(1.02);
+      box-shadow:var(--shadow-md);
+    }
+
+    .member-avatar{
+      width:100%;
+      height:240px;
+      border-radius:16px;
+      object-fit:cover;
+      margin-bottom:16px;
+    }
+
+    .member-name{
+      font-size:1.2rem;
+      font-weight:800;
+      margin-bottom:8px;
+    }
+
+    .member-detail{
+      font-size:0.9rem;
+      color:var(--text-muted);
+      margin-bottom:6px;
+    }
+
+    .member-detail strong{
+      color:var(--text-primary);
+    }
+
+    /* ---------- Image Gallery - Grid ---------- */
+    .gallery-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
       gap:16px;
-      box-shadow:var(--shadow);
+      margin-bottom:var(--spacing);
     }
 
-    .brand{display:flex;align-items:center;gap:12px}
-    .logo{
-      width:70px;height:70px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:700;color:white;background:linear-gradient(135deg,var(--accent),var(--accent-3));box-shadow:0 6px 18px rgba(59,130,246,0.18)
-    }
-    .brand h1{margin:0;font-size:1.15rem}
-    .brand p{margin:0;font-size:0.85rem;color:var(--muted)}
-
-    nav.primary{display:flex;gap:12px;align-items:center}
-    nav.primary a{padding:8px 12px;border-radius:10px;font-weight:600}
-    nav.primary a:hover{background:var(--glass)}
-
-    .controls{display:flex;gap:8px;align-items:center}
-    .btn{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:10px;background:var(--card);box-shadow:var(--shadow);cursor:pointer}
-    .btn.small{padding:6px 10px;font-size:0.9rem}
-
-    /* Toggle switch */
-    .switch{position:relative;width:48px;height:28px;background:linear-gradient(90deg,#e6eefc,#fff);border-radius:999px;display:inline-block}
-    .switch .knob{position:absolute;top:3px;left:3px;width:22px;height:22px;background:white;border-radius:999px;transition:all .25s cubic-bezier(.2,.9,.2,1);box-shadow:0 4px 10px rgba(2,6,23,0.12)}
-    body.dark .switch{background:linear-gradient(90deg,#0c2a45,#082033)}
-    body.dark .switch .knob{left:23px}
-
-    /* ---------- Hero / Welcome ---------- */
-    .hero{
-      display:grid;grid-template-columns:1fr 380px;gap:20px;align-items:center;margin-top:18px;
-    }
-    .welcome{
-      background-image: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=60');
-      background-size:cover;background-position:center;border-radius:14px;padding:28px;color:white;min-height:220px;position:relative;overflow:hidden;box-shadow:var(--shadow)
-    }
-    .welcome::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(3,7,18,0.25),rgba(3,7,18,0.35));border-radius:14px}
-    .welcome .inner{position:relative;z-index:2}
-    .welcome h2{margin:0 0 8px;font-size:1.6rem}
-    .welcome p{margin:0 0 12px}
-    .slogan{display:inline-block;padding:8px 12px;background:rgba(255,255,255,0.12);border-radius:999px;font-weight:600}
-
-    .quick-card{background:var(--card);border-radius:12px;padding:16px;box-shadow:var(--shadow)}
-
-    /* ---------- Announcements ---------- */
-    .announcements{margin-top:18px;padding:12px;border-radius:12px;background:linear-gradient(90deg,rgba(245,158,11,0.06),rgba(59,130,246,0.03));display:flex;gap:12px;align-items:center}
-    .ticker{flex:1;overflow:hidden}
-    .ticker p{white-space:nowrap;display:inline-block;animation:marquee 18s linear infinite}
-    @keyframes marquee{0%{transform:translateX(100%)}100%{transform:translateX(-100%)}}
-
-    /* ---------- Members grid ---------- */
-    .members{margin-top:18px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .member{background:var(--card);padding:14px;border-radius:12px;box-shadow:var(--shadow);display:flex;gap:12px;align-items:center;transition:transform .25s, box-shadow .25s;overflow:hidden}
-    .member:hover{transform:translateY(-6px)}
-    .member img{width:92px;height:92px;border-radius:10px;object-fit:cover;flex-shrink:0}
-    .member .meta{flex:1}
-    .member h3{margin:0;font-size:1.05rem}
-    .member p{margin:6px 0;color:var(--muted);font-size:0.9rem}
-
-    /* On smaller screens show details under image or stacked */
-    @media (max-width:980px){
-      .hero{grid-template-columns:1fr}
-      .members{grid-template-columns:repeat(2,1fr)}
-      .member{flex-direction:row}
-    }
-    @media (max-width:640px){
-      .members{grid-template-columns:1fr}
-      .member{flex-direction:column;align-items:flex-start}
-      .member img{width:100%;height:220px;border-radius:10px}
+    .gallery-item{
+      height:280px;
+      border-radius:20px;
+      background-size:cover;
+      background-position:center;
+      box-shadow:var(--shadow-sm);
+      transition:all 0.3s;
+      cursor:pointer;
     }
 
-    /* ---------- Gallery / Slideshow ---------- */
-    .gallery{margin-top:18px;background:var(--card);padding:14px;border-radius:12px;box-shadow:var(--shadow)}
-    .slideshow{position:relative;overflow:hidden;border-radius:10px}
-    .slides{display:flex;transition:transform .6s cubic-bezier(.2,.9,.2,1)}
-    .slide{min-width:100%;height:280px;background-size:cover;background-position:center}
-    .slideshow .dots{position:absolute;left:50%;transform:translateX(-50%);bottom:12px;display:flex;gap:8px}
-    .dot{width:10px;height:10px;border-radius:999px;background:rgba(255,255,255,0.6);cursor:pointer}
-    .dot.active{background:var(--accent-2)}
+    .gallery-item:hover{
+      transform:scale(1.05);
+      box-shadow:var(--shadow-md);
+    }
 
-    /* ---------- Bible verse / contact ---------- */
-    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
-    .verse{background:linear-gradient(180deg,rgba(59,130,246,0.06),rgba(245,158,11,0.03));padding:18px;border-radius:12px}
-    .verse blockquote{margin:0;font-weight:600}
+    /* ---------- Events Timeline ---------- */
+    .timeline{
+      position:relative;
+      padding-left:40px;
+      margin-bottom:var(--spacing);
+    }
 
-    form.contact{background:var(--card);padding:14px;border-radius:12px;box-shadow:var(--shadow)}
-    form.contact label{display:block;font-size:0.9rem;margin-top:8px}
-    form.contact input, form.contact textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(15,23,42,0.06);margin-top:6px}
-    form.contact button{margin-top:10px;padding:10px 12px;border-radius:10px;background:linear-gradient(90deg,var(--accent),var(--accent-3));border:none;color:white;font-weight:700;cursor:pointer}
+    .timeline::before{
+      content:'';
+      position:absolute;
+      left:15px;
+      top:0;
+      bottom:0;
+      width:3px;
+      background:linear-gradient(180deg, var(--primary), var(--tertiary));
+    }
+
+    .timeline-item{
+      position:relative;
+      padding:20px;
+      background:var(--surface);
+      border:1px solid var(--border);
+      border-radius:16px;
+      margin-bottom:24px;
+      box-shadow:var(--shadow-sm);
+    }
+
+    .timeline-item::before{
+      content:'';
+      position:absolute;
+      left:-31px;
+      top:24px;
+      width:16px;
+      height:16px;
+      border-radius:50%;
+      background:var(--primary);
+      border:3px solid var(--surface);
+    }
+
+    .event-date{
+      font-size:0.85rem;
+      font-weight:700;
+      color:var(--primary);
+      margin-bottom:8px;
+    }
+
+    .event-title{
+      font-size:1.1rem;
+      font-weight:800;
+      margin-bottom:4px;
+    }
+
+    /* ---------- Verse Card ---------- */
+    .verse-card{
+      background:linear-gradient(135deg, var(--primary), var(--secondary));
+      color:white;
+      border-radius:20px;
+      padding:40px;
+      text-align:center;
+      margin-bottom:var(--spacing);
+      box-shadow:var(--shadow-md);
+    }
+
+    .verse-card blockquote{
+      font-size:1.3rem;
+      font-weight:700;
+      font-style:italic;
+      margin-bottom:16px;
+      line-height:1.6;
+    }
+
+    .verse-reference{
+      font-size:0.9rem;
+      opacity:0.9;
+    }
+
+    /* ---------- Contact Form ---------- */
+    .contact-form{
+      background:var(--surface);
+      border:1px solid var(--border);
+      border-radius:20px;
+      padding:32px;
+      box-shadow:var(--shadow-sm);
+      margin-bottom:var(--spacing);
+    }
+
+    .form-group{
+      margin-bottom:20px;
+    }
+
+    .form-group label{
+      display:block;
+      font-weight:700;
+      margin-bottom:8px;
+      color:var(--text-primary);
+    }
+
+    .form-group input,
+    .form-group textarea{
+      width:100%;
+      padding:12px 16px;
+      border:2px solid var(--border);
+      border-radius:12px;
+      font-size:1rem;
+      background:var(--neutral-bg);
+      color:var(--text-primary);
+      transition:all 0.2s;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus{
+      outline:none;
+      border-color:var(--primary);
+    }
+
+    .submit-btn{
+      width:100%;
+      padding:14px;
+      background:linear-gradient(90deg, var(--primary), var(--secondary));
+      color:white;
+      border:none;
+      border-radius:12px;
+      font-size:1rem;
+      font-weight:700;
+      cursor:pointer;
+      transition:all 0.3s;
+    }
+
+    .submit-btn:hover{
+      transform:translateY(-2px);
+      box-shadow:0 6px 20px rgba(99,102,241,0.4);
+    }
 
     /* ---------- Footer ---------- */
-    footer.site-footer{position:fixed;left:0;right:0;bottom:0;background:linear-gradient(90deg,var(--accent),var(--accent-3));color:white;padding:12px 18px;display:flex;align-items:center;justify-content:center}
+    .page-footer{
+      width:100%;
+      text-align:center;
+      padding:32px 0;
+      margin-top:var(--spacing);
+      border-top:1px solid var(--border);
+      color:var(--text-muted);
+    }
 
-    /* Misc */
-    .badge{display:inline-block;padding:6px 8px;border-radius:8px;background:rgba(59,130,246,0.08);font-weight:700}
-    .muted{color:var(--muted)}
-    .center{display:flex;align-items:center;justify-content:center}
-    .hidden{display:none}
-
-    /* small screens adjustments */
-    @media (max-width:480px){
-      .brand h1{font-size:1rem}
-      nav.primary{display:none}
+    /* ---------- Responsive ---------- */
+    @media (max-width:768px){
+      .nav-links{display:none}
+      .top-nav{padding:12px 16px}
+      .members-grid{grid-template-columns:1fr}
+      .timeline{padding-left:30px}
+      .timeline::before{left:10px}
+      .timeline-item::before{left:-26px}
     }
 
   </style>
 </head>
 <body>
-  <div class="container">
-    <header class="site-header" role="banner">
-      <div class="brand">
-        <div class="logo">AF</div>
-        <div>
+  <div class="page-wrapper">
+    <nav class="top-nav content-width">
+      <div class="identity">
+        <div class="emblem">AF</div>
+        <div class="title-group">
           <h1>AMIE FAMILY</h1>
-          <p class="muted">One Family in Christ, Unity in Love</p>
+          <p>Unity in Faith & Love</p>
         </div>
       </div>
 
-      <nav class="primary" role="navigation" aria-label="Main navigation">
+      <div class="nav-links">
         <a href="#home">Home</a>
         <a href="#members">Members</a>
         <a href="#gallery">Gallery</a>
         <a href="#events">Events</a>
-        <a href="#about">About</a>
         <a href="#contact">Contact</a>
-      </nav>
+      </div>
 
-      <div class="controls">
-        <div class="btn small" id="whatsappBtn" title="Contact on WhatsApp">📱 WhatsApp</div>
-        <div class="btn small" id="themeToggle" aria-pressed="false">
-          <div class="switch" aria-hidden="true"><div class="knob"></div></div>
+      <div class="action-buttons">
+        <div class="icon-btn" id="whatsappButton" title="WhatsApp">💬</div>
+        <div class="icon-btn" id="themeButton" title="Toggle Theme">🌙</div>
+      </div>
+    </nav>
+
+    <main class="content-width">
+      <!-- HERO -->
+      <section class="hero-section" id="home">
+        <div class="hero-badge">One Family in Christ</div>
+        <h2>Welcome to AMIE FAMILY</h2>
+        <p>A community of believers united in faith, love, and service. Discover our members, upcoming events, and join our journey together.</p>
+        <div class="cta-group">
+          <a href="#members" class="cta-btn cta-primary">Meet Our Members</a>
+          <a href="#contact" class="cta-btn cta-secondary">Get in Touch</a>
+        </div>
+      </section>
+
+      <!-- STATS -->
+      <div class="stats-bar">
+        <div class="stat-item">
+          <div class="stat-number">17</div>
+          <div class="stat-label">Members</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">12+</div>
+          <div class="stat-label">Years Active</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">50+</div>
+          <div class="stat-label">Events Hosted</div>
         </div>
       </div>
-    </header>
 
-    <!-- HERO + QUICK -->
-    <section class="hero" id="home">
-      <div class="welcome" role="region" aria-label="Welcome">
-        <div class="inner">
-          <span class="slogan">One Family in Christ</span>
-          <h2>Welcome to AMIE FAMILY</h2>
-          <p>We are a family of believers who seek unity and serve how God guides us. Explore our members, events, gallery and get in touch.</p>
-          <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
-            <a class="btn" href="#members">See Members</a>
-            <a class="btn" href="#contact">Join / Contact</a>
+      <!-- TICKER -->
+      <div class="ticker-wrapper">
+        <div class="ticker-content">
+          <span>🎉 Sunday worship at 10:00 AM</span>
+          <span>📖 Youth Bible study every Friday</span>
+          <span>🙏 Prayer meetings on Wednesday evenings</span>
+          <span>🎉 Sunday worship at 10:00 AM</span>
+          <span>📖 Youth Bible study every Friday</span>
+          <span>🙏 Prayer meetings on Wednesday evenings</span>
+        </div>
+      </div>
+
+      <!-- MEMBERS -->
+      <section id="members">
+        <div class="section-header">
+          <h2>Our Members</h2>
+          <p>Meet the wonderful people who make up our family. Each brings unique gifts and serves faithfully.</p>
+        </div>
+        <div class="members-grid" id="membersList"></div>
+      </section>
+
+      <!-- GALLERY -->
+      <section id="gallery">
+        <div class="section-header">
+          <h2>Gallery</h2>
+          <p>Moments captured from our gatherings, events, and fellowship times.</p>
+        </div>
+        <div class="gallery-grid">
+          <div class="gallery-item" style="background-image:url('4Q0B9823.jpg')"></div>
+          <div class="gallery-item" style="background-image:url('https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=800&q=60')"></div>
+          <div class="gallery-item" style="background-image:url('https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&w=800&q=60')"></div>
+        </div>
+      </section>
+
+      <!-- EVENTS -->
+      <section id="events">
+        <div class="section-header">
+          <h2>Upcoming Events</h2>
+          <p>Join us for worship, fellowship, and service opportunities throughout the year.</p>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="event-date">December 7, 2025</div>
+            <div class="event-title">Family Charity Day & Worship</div>
+            <p class="member-detail">Join us for a day of giving back to our community and worship together.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="event-date">December 20, 2025</div>
+            <div class="event-title">End-of-Year Thanksgiving</div>
+            <p class="member-detail">Celebrate the year's blessings with a special thanksgiving service.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="event-date">January 3, 2026</div>
+            <div class="event-title">Bible Study Kickoff</div>
+            <p class="member-detail">Start the new year diving deeper into Scripture together.</p>
           </div>
         </div>
+      </section>
+
+      <!-- VERSE -->
+      <div class="verse-card">
+        <blockquote>"Behold, how good and pleasant it is when brothers dwell in unity!"</blockquote>
+        <div class="verse-reference">— Psalm 133:1 (ESV)</div>
       </div>
 
-      <aside class="quick-card">
-        <h3>Quick Updates</h3>
-        <div class="announcements" style="margin-top:8px">
-          <div style="width:6px;height:44px;border-radius:6px;background:var(--accent-2)"></div>
-          <div class="ticker">
-            <p id="tickerText">Welcome to AMIE FAMILY — Sunday worship this week at 10:00AM • New youth Bible study on Friday • Pray for our sick brother John.</p>
+      <!-- CONTACT -->
+      <section id="contact">
+        <div class="section-header">
+          <h2>Contact Us</h2>
+          <p>Have questions or want to join our family? Send us a message below.</p>
+        </div>
+        <form class="contact-form" id="contactForm">
+          <div class="form-group">
+            <label for="nameInput">Your Name</label>
+            <input type="text" id="nameInput" required />
           </div>
-        </div>
-
-        <div style="margin-top:12px;display:flex;gap:8px">
-          <div class="badge">Members <strong style="margin-left:6px">17</strong></div>
-          <div class="muted" style="margin-left:auto">Updated: <strong id="updatedAt">Nov 30, 2025</strong></div>
-        </div>
-      </aside>
-    </section>
-
-    <!-- MEMBERS -->
-    <section id="members">
-      <h2 style="margin-top:18px">Our Members</h2>
-      <p class="muted">Click a member to view more details. Each profile shows photo, name, phone and place of study.</p>
-
-      <div class="members" id="membersGrid" role="list">
-        <!-- JS will render 17 members here -->
-      </div>
-    </section>
-
-    <!-- GALLERY / SLIDESHOW -->
-    <section id="gallery" class="gallery">
-      <h2>Gallery</h2>
-      <div class="slideshow" aria-roledescription="carousel">
-        <div class="slides" id="slides">
-          <div class="slide" style="background-image:url('4Q0B9823.jpg')"></div>
-          <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1508873699372-7ae48f9a5f3e?auto=format&fit=crop&w=1200&q=60')"></div>
-          <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1474978520636-2df2b8f0afea?auto=format&fit=crop&w=1200&q=60')"></div>
-        </div>
-        <div class="dots" id="dots"></div>
-      </div>
-
-      <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
-        <button class="btn small" id="prev">◀ Prev</button>
-        <button class="btn small" id="next">Next ▶</button>
-      </div>
-    </section>
-
-    <!-- EVENTS / Updates -->
-    <section id="events" style="margin-top:18px">
-      <h2>Events & Updates</h2>
-      <div class="grid-2">
-        <div class="card quick-card">
-          <h3>Upcoming Events</h3>
-          <ul>
-            <li><strong>Dec 7, 2025</strong> — Family Charity Day & Worship</li>
-            <li><strong>Dec 20, 2025</strong> — End-of-year Thanksgiving</li>
-            <li><strong>Jan 3, 2026</strong> — Bible Study Kickoff</li>
-          </ul>
-        </div>
-
-        <div class="card quick-card">
-          <h3>Past Members</h3>
-          <p class="muted">We honour past members who served faithfully. (Click to view historical notes)</p>
-          <button class="btn small" onclick="alert('Past Members page — add details here')">View Past Members</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- VERSE & CONTACT -->
-    <section id="about" class="grid-2">
-      <div class="verse">
-        <h3>Bible Verse</h3>
-        <blockquote>"Behold, how good and pleasant it is when brothers dwell in unity!" — Psalm 133:1 (ESV)</blockquote>
-        <p class="muted" style="margin-top:8px">Our family lives by this verse as the foundation of our unity and service.</p>
-      </div>
-
-      <div>
-        <h3 id="contact">Contact Us</h3>
-        <form class="contact" id="contactForm" onsubmit="return handleContact(event)">
-          <label for="name">Your name</label>
-          <input id="name" required />
-
-          <label for="email">Email</label>
-          <input id="email" type="email" required />
-
-          <label for="message">Message</label>
-          <textarea id="message" rows="4" required></textarea>
-
-          <button type="submit">Send Message</button>
+          <div class="form-group">
+            <label for="emailInput">Email Address</label>
+            <input type="email" id="emailInput" required />
+          </div>
+          <div class="form-group">
+            <label for="messageInput">Your Message</label>
+            <textarea id="messageInput" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Send Message</button>
         </form>
-      </div>
-    </section>
+      </section>
+    </main>
 
+    <footer class="page-footer content-width">
+      <p>© 2025 AMIE FAMILY — Unity in Faith & Love</p>
+    </footer>
   </div>
 
-  <footer class="site-footer">
-    <div>© AMIE FAMILY — One Family in Christ • Unity in Love</div>
-  </footer>
-
   <script>
-    /* ---------- Data: 17 family members ---------- */
-    const members = [
+    const familyMembers = [
       {name:'Olivier Ndihokubwayo', phone:'+250786718716', study:'Theology — Tumba College', img:'4Q0B9823.jpg'},
       {name:'Grace Uwimana', phone:'+250788234111', study:'Nursing — University', img:'https://i.pravatar.cc/300?img=2'},
       {name:'Jean Bosco', phone:'+250785001234', study:'Business — College', img:'https://i.pravatar.cc/300?img=3'},
@@ -323,108 +687,48 @@
       {name:'Beatrice Nyiransabimana', phone:'+250780123456', study:'Primary Teaching — Institute', img:'https://i.pravatar.cc/300?img=17'}
     ];
 
-    const membersGrid = document.getElementById('membersGrid');
+    const membersList = document.getElementById('membersList');
+    
+    familyMembers.forEach(member => {
+      const card = document.createElement('div');
+      card.className = 'member-card';
+      card.innerHTML = `
+        <img src="${member.img}" alt="${member.name}" class="member-avatar" loading="lazy" />
+        <div class="member-name">${member.name}</div>
+        <div class="member-detail"><strong>Phone:</strong> ${member.phone}</div>
+        <div class="member-detail"><strong>Studies:</strong> ${member.study}</div>
+      `;
+      membersList.appendChild(card);
+    });
 
-    function renderMembers(){
-      membersGrid.innerHTML = '';
-      members.forEach((m, i) => {
-        const el = document.createElement('article');
-        el.className = 'member';
-        el.setAttribute('role','listitem');
-        el.innerHTML = `
-          <img src="${m.img}" alt="Photo of ${m.name}" loading="lazy" />
-          <div class="meta">
-            <h3>${m.name}</h3>
-            <p><strong>Phone:</strong> <a href="tel:${m.phone}">${m.phone}</a></p>
-            <p><strong>Field of study:</strong> ${m.study}</p>
-          </div>
-        `;
-        // click to reveal more (simple animation)
-        el.addEventListener('click', () => {
-          el.classList.toggle('expanded');
-          if(el.querySelector('.more')) return; // avoid duplicate
-          const more = document.createElement('div');
-          more.className = 'more muted';
-          more.style.marginTop = '8px';
-          more.textContent = 'Active in: Worship team, Sunday school, Prayer meetings.';
-          el.querySelector('.meta').appendChild(more);
-        });
-        membersGrid.appendChild(el);
-      });
-    }
-
-    renderMembers();
-
-    /* ---------- Slideshow ---------- */
-    const slides = document.getElementById('slides');
-    const dots = document.getElementById('dots');
-    const slideCount = slides.children.length;
-    let index = 0;
-
-    function createDots(){
-      for(let i=0;i<slideCount;i++){
-        const d = document.createElement('div'); d.className='dot'; d.dataset.i=i;
-        d.addEventListener('click',()=>{goTo(i)});
-        dots.appendChild(d);
-      }
-      dots.children[0].classList.add('active');
-    }
-    function updateDots(){
-      Array.from(dots.children).forEach((d,idx)=>d.classList.toggle('active', idx===index));
-    }
-    function goTo(i){ index = (i+slideCount)%slideCount; slides.style.transform = `translateX(-${index*100}%)`; updateDots(); }
-    function next(){ goTo(index+1); }
-    function prev(){ goTo(index-1); }
-
-    document.getElementById('next').addEventListener('click', next);
-    document.getElementById('prev').addEventListener('click', prev);
-    createDots();
-    let slideTimer = setInterval(next, 5500);
-
-    // pause on hover
-    slides.parentElement.addEventListener('mouseenter',()=>clearInterval(slideTimer));
-    slides.parentElement.addEventListener('mouseleave',()=>slideTimer=setInterval(next,5500));
-
-    /* ---------- Theme toggle (dark/light) ---------- */
-    const themeToggle = document.getElementById('themeToggle');
+    // Theme toggle
+    const themeButton = document.getElementById('themeButton');
     const body = document.body;
-    // initialize from localStorage
-    if(localStorage.getItem('amie-theme') === 'dark') body.classList.add('dark');
-    themeToggle.addEventListener('click',()=>{
-      body.classList.toggle('dark');
-      const isDark = body.classList.contains('dark');
-      themeToggle.setAttribute('aria-pressed', String(isDark));
-      localStorage.setItem('amie-theme', isDark ? 'dark' : 'light');
+    
+    const savedTheme = localStorage.getItem('amie-theme-mode');
+    if(savedTheme === 'dark') body.classList.add('dark-theme');
+    
+    themeButton.addEventListener('click', () => {
+      body.classList.toggle('dark-theme');
+      const isDark = body.classList.contains('dark-theme');
+      themeButton.textContent = isDark ? '☀️' : '🌙';
+      localStorage.setItem('amie-theme-mode', isDark ? 'dark' : 'light');
     });
 
-    /* ---------- WhatsApp button ---------- */
-    document.getElementById('whatsappBtn').addEventListener('click', ()=>{
-      // change the phone and message below to your preferred contact
+    // WhatsApp
+    document.getElementById('whatsappButton').addEventListener('click', () => {
       const phone = '250780123456';
-      const text = encodeURIComponent('Hello AMIE FAMILY, I would like to contact you.');
-      window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
+      const message = encodeURIComponent('Hello AMIE FAMILY! I would like to connect with you.');
+      window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
     });
 
-    /* ---------- Contact form ---------- */
-    function handleContact(e){
+    // Contact form
+    document.getElementById('contactForm').addEventListener('submit', (e) => {
       e.preventDefault();
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const message = document.getElementById('message').value.trim();
-      if(!name||!email||!message){ alert('Please fill all fields'); return false; }
-      // For production: send to server via fetch. Here we simulate success.
-      alert('Thanks '+name+" — your message was sent (demo). We'll be in touch soon.");
+      const name = document.getElementById('nameInput').value;
+      alert(`Thank you ${name}! Your message has been received. We'll be in touch soon.`);
       e.target.reset();
-      return false;
-    }
-
-    /* ---------- Accessibility helpers ---------- */
-    // keyboard: press T to toggle theme
-    document.addEventListener('keydown', (ev)=>{ if(ev.key.toLowerCase()==='t') themeToggle.click(); });
-
-    /* ---------- Small polish: set updated date dynamically ---------- */
-    document.getElementById('updatedAt').textContent = new Date().toLocaleDateString();
-
+    });
   </script>
 </body>
 </html>
