@@ -1,337 +1,798 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AMIE FAMILY — One Family in Christ, Unity in Love</title>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AMIE FAMILY — One Family in Christ, Unity in Love</title>
 
-  <style>
-    /* ---------- Root variables ---------- */
-    :root{
-      --bg:#f6fbff;
-      --card:#ffffff;
-      --muted:#6b7280;
-      --accent:#3b82f6; /* beloved blue */
-      --accent-2:#f59e0b; /* warm gold */
-      --accent-3:#fb7185; /* soft coral */
-      --glass: rgba(255,255,255,0.6);
-      --shadow: 0 8px 24px rgba(2,6,23,0.08);
-      --radius:14px;
-      --max-width:1100px;
-    }
+    <style>
+      /* ---------- Root variables ---------- */
+      :root {
+        --bg: #f6fbff;
+        --others: #071027;
+        --card: #ffffff;
+        --muted: #6b7280;
+        --accent: #3b82f6; /* beloved blue */
+        --accent-2: #f59e0b; /* warm gold */
+        --accent-3: #fb7185; /* soft coral */
+        --glass: rgba(255, 255, 255, 0.6);
+        --shadow: 0 8px 24px rgba(2, 6, 23, 0.08);
+        --radius: 14px;
+        --max-width: 1100px;
+      }
 
-    /* Dark mode vars (class .dark on body) */
-    body.dark{
-      --bg: #071027;
-      --card: #071a2b;
-      --muted: #9aa7b8;
-      --glass: rgba(255,255,255,0.03);
-      color: #e6eef8;
-    }
+      /* Dark mode vars (class .dark on body) */
+      body.dark {
+        --bg: #071027;
+        --others: #736f6f;
+        --card: #071a2b;
+        --muted: #1a2632;
+        --glass: rgba(255, 255, 255, 0.03);
+        color: #2c3137;
+      }
 
-    /* ---------- Base ---------- */
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      background: linear-gradient(180deg, var(--bg), #fff);
-      color:#0f172a;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.4;
-      padding-bottom:80px; /* space for footer */
-    }
+      /* ---------- Base ---------- */
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+          Roboto, "Helvetica Neue", Arial;
+        background: linear-gradient(150deg, var(--bg), #fff);
+        color: #0f172a;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        line-height: 1.1;
+        padding-bottom: 80px; /* space for footer */
+      }
 
-    a{color:var(--accent); text-decoration:none}
+      a {
+        color: var(--accent);
+        text-decoration: none;
+      }
 
-    .container{
-      max-width:var(--max-width);
-      margin:28px auto;
-      padding:20px;
-    }
+      .container {
+        max-width: var(--max-width);
+        margin: 28px auto;
+        padding: 20px;
+      }
 
-    /* ---------- Header & Nav ---------- */
-    header.site-header{
-      background: linear-gradient(90deg, rgba(59,130,246,0.08), rgba(251,113,133,0.04));
-      border-radius:16px;
-      padding:18px 20px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:16px;
-      box-shadow:var(--shadow);
-    }
+      /* ---------- Header & Nav ---------- */
+      header.site-header {
+        background: linear-gradient(
+          90deg,
+          rgba(59, 130, 246, 0.08),
+          rgba(251, 113, 133, 0.04)
+        );
+        border-radius: 16px;
+        padding: 18px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        box-shadow: var(--shadow);
+      }
 
-    .brand{display:flex;align-items:center;gap:12px}
-    .logo{
-      width:70px;height:70px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:700;color:white;background:linear-gradient(135deg,var(--accent),var(--accent-3));box-shadow:0 6px 18px rgba(59,130,246,0.18)
-    }
-    .brand h1{margin:0;font-size:1.15rem}
-    .brand p{margin:0;font-size:0.85rem;color:var(--muted)}
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .logo {
+        width: 70px;
+        height: 70px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        color: white;
+        background: linear-gradient(135deg, var(--accent), var(--accent-3));
+        box-shadow: 0 6px 18px rgba(59, 130, 246, 0.18);
+      }
 
-    nav.primary{display:flex;gap:12px;align-items:center}
-    nav.primary a{padding:8px 12px;border-radius:10px;font-weight:600}
-    nav.primary a:hover{background:var(--glass)}
+      .others {
+        color: var(--others);
+      }
 
-    .controls{display:flex;gap:8px;align-items:center}
-    .btn{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:10px;background:var(--card);box-shadow:var(--shadow);cursor:pointer}
-    .btn.small{padding:6px 10px;font-size:0.9rem}
+      .brand h1 {
+        margin: 0;
+        font-size: 1.15rem;
+      }
+      .brand p {
+        margin: 0;
+        font-size: 0.85rem;
+        color: var(--muted);
+      }
 
-    /* Toggle switch */
-    .switch{position:relative;width:48px;height:28px;background:linear-gradient(90deg,#e6eefc,#fff);border-radius:999px;display:inline-block}
-    .switch .knob{position:absolute;top:3px;left:3px;width:22px;height:22px;background:white;border-radius:999px;transition:all .25s cubic-bezier(.2,.9,.2,1);box-shadow:0 4px 10px rgba(2,6,23,0.12)}
-    body.dark .switch{background:linear-gradient(90deg,#0c2a45,#082033)}
-    body.dark .switch .knob{left:23px}
+      nav.primary {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+      }
+      nav.primary a {
+        padding: 8px 12px;
+        border-radius: 10px;
+        font-weight: 600;
+      }
+      nav.primary a:hover {
+        background: var(--glass);
+      }
 
-    /* ---------- Hero / Welcome ---------- */
-    .hero{
-      display:grid;grid-template-columns:1fr 380px;gap:20px;align-items:center;margin-top:18px;
-    }
-    .welcome{
-      background-image: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=60');
-      background-size:cover;background-position:center;border-radius:14px;padding:28px;color:white;min-height:220px;position:relative;overflow:hidden;box-shadow:var(--shadow)
-    }
-    .welcome::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(3,7,18,0.25),rgba(3,7,18,0.35));border-radius:14px}
-    .welcome .inner{position:relative;z-index:2}
-    .welcome h2{margin:0 0 8px;font-size:1.6rem}
-    .welcome p{margin:0 0 12px}
-    .slogan{display:inline-block;padding:8px 12px;background:rgba(255,255,255,0.12);border-radius:999px;font-weight:600}
+      .controls {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 12px;
+        border-radius: 10px;
+        background: var(--card);
+        box-shadow: var(--shadow);
+        cursor: pointer;
+        outline: none;
+        border: 1px solid var(--others);
+        color: var(--others);
+      }
+      .btn.small {
+        padding: 6px 10px;
+        font-size: 0.9rem;
+      }
 
-    .quick-card{background:var(--card);border-radius:12px;padding:16px;box-shadow:var(--shadow)}
+      /* Toggle switch */
+      .switch {
+        position: relative;
+        width: 48px;
+        height: 28px;
+        background: linear-gradient(90deg, #e6eefc, #fff);
+        border-radius: 999px;
+        display: inline-block;
+      }
+      .switch .knob {
+        position: absolute;
+        top: 3px;
+        left: 3px;
+        width: 22px;
+        height: 22px;
+        background: var(--others);
+        border-radius: 999px;
+        transition: all 0.25s cubic-bezier(0.2, 0.9, 0.2, 1);
+        box-shadow: 0 4px 10px rgba(2, 6, 23, 0.12);
+      }
+      body.dark .switch {
+        background: linear-gradient(90deg, #0c2a45, #082033);
+      }
+      body.dark .switch .knob {
+        left: 23px;
+      }
 
-    /* ---------- Announcements ---------- */
-    .announcements{margin-top:18px;padding:12px;border-radius:12px;background:linear-gradient(90deg,rgba(245,158,11,0.06),rgba(59,130,246,0.03));display:flex;gap:12px;align-items:center}
-    .ticker{flex:1;overflow:hidden}
-    .ticker p{white-space:nowrap;display:inline-block;animation:marquee 18s linear infinite}
-    @keyframes marquee{0%{transform:translateX(100%)}100%{transform:translateX(-100%)}}
+      /* ---------- Hero / Welcome ---------- */
+      .hero {
+        display: grid;
+        grid-template-columns: 1fr 380px;
+        gap: 20px;
+        align-items: center;
+        margin-top: 18px;
+      }
+      .welcome {
+        background-image: url("https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=60");
+        background-size: cover;
+        background-position: center;
+        border-radius: 14px;
+        padding: 28px;
+        color: white;
+        min-height: 220px;
+        position: relative;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+      }
+      .welcome::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(3, 7, 18, 0.25),
+          rgba(3, 7, 18, 0.35)
+        );
+        border-radius: 14px;
+      }
+      .welcome .inner {
+        position: relative;
+        z-index: 2;
+      }
+      .welcome h2 {
+        margin: 0 0 8px;
+        font-size: 1.6rem;
+      }
+      .welcome p {
+        margin: 0 0 12px;
+      }
+      .slogan {
+        display: inline-block;
+        padding: 8px 12px;
+        background: rgba(255, 255, 255, 0.12);
+        border-radius: 999px;
+        font-weight: 600;
+      }
 
-    /* ---------- Members grid ---------- */
-    .members{margin-top:18px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .member{background:var(--card);padding:14px;border-radius:12px;box-shadow:var(--shadow);display:flex;gap:12px;align-items:center;transition:transform .25s, box-shadow .25s;overflow:hidden}
-    .member:hover{transform:translateY(-6px)}
-    .member img{width:92px;height:92px;border-radius:10px;object-fit:cover;flex-shrink:0}
-    .member .meta{flex:1}
-    .member h3{margin:0;font-size:1.05rem}
-    .member p{margin:6px 0;color:var(--muted);font-size:0.9rem}
+      .quick-card {
+        background: var(--card);
+        border-radius: 12px;
+        padding: 16px;
+        box-shadow: var(--shadow);
+      }
 
-    /* On smaller screens show details under image or stacked */
-    @media (max-width:980px){
-      .hero{grid-template-columns:1fr}
-      .members{grid-template-columns:repeat(2,1fr)}
-      .member{flex-direction:row}
-    }
-    @media (max-width:640px){
-      .members{grid-template-columns:1fr}
-      .member{flex-direction:column;align-items:flex-start}
-      .member img{width:100%;height:220px;border-radius:10px}
-    }
+      /* ---------- Announcements ---------- */
+      .announcements {
+        margin-top: 18px;
+        padding: 12px;
+        border-radius: 12px;
+        background: linear-gradient(
+          90deg,
+          rgba(245, 158, 11, 0.06),
+          rgba(59, 130, 246, 0.03)
+        );
+        display: flex;
+        gap: 12px;
+        align-items: center;
+      }
+      .ticker {
+        flex: 1;
+        overflow: hidden;
+      }
+      .ticker p {
+        white-space: nowrap;
+        display: inline-block;
+        animation: marquee 18s linear infinite;
+      }
+      @keyframes marquee {
+        0% {
+          transform: translateX(100%);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
 
-    /* ---------- Gallery / Slideshow ---------- */
-    .gallery{margin-top:18px;background:var(--card);padding:14px;border-radius:12px;box-shadow:var(--shadow)}
-    .slideshow{position:relative;overflow:hidden;border-radius:10px}
-    .slides{display:flex;transition:transform .6s cubic-bezier(.2,.9,.2,1)}
-    .slide{min-width:100%;height:280px;background-size:cover;background-position:center}
-    .slideshow .dots{position:absolute;left:50%;transform:translateX(-50%);bottom:12px;display:flex;gap:8px}
-    .dot{width:10px;height:10px;border-radius:999px;background:rgba(255,255,255,0.6);cursor:pointer}
-    .dot.active{background:var(--accent-2)}
+      /* ---------- Members grid ---------- */
+      .members {
+        margin-top: 18px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+      .member {
+        background: var(--card);
+        padding: 14px;
+        border-radius: 12px;
+        box-shadow: var(--shadow);
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        transition: transform 0.25s, box-shadow 0.25s;
+        overflow: hidden;
+      }
+      .member:hover {
+        transform: translateY(-6px);
+      }
+      .member img {
+        width: 92px;
+        height: 92px;
+        border-radius: 10px;
+        object-fit: cover;
+        flex-shrink: 0;
+      }
+      .member .meta {
+        flex: 1;
+      }
+      .member h3 {
+        margin: 0;
+        font-size: 1.05rem;
+      }
+      .member p {
+        margin: 6px 0;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
 
-    /* ---------- Bible verse / contact ---------- */
-    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
-    .verse{background:linear-gradient(180deg,rgba(59,130,246,0.06),rgba(245,158,11,0.03));padding:18px;border-radius:12px}
-    .verse blockquote{margin:0;font-weight:600}
+      /* On smaller screens show details under image or stacked */
+      @media (max-width: 980px) {
+        .hero {
+          grid-template-columns: 1fr;
+        }
+        .members {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .member {
+          flex-direction: row;
+        }
+      }
+      @media (max-width: 640px) {
+        .members {
+          grid-template-columns: 1fr;
+        }
+        .member {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .member img {
+          width: 100%;
+          height: 220px;
+          border-radius: 10px;
+        }
+      }
 
-    form.contact{background:var(--card);padding:14px;border-radius:12px;box-shadow:var(--shadow)}
-    form.contact label{display:block;font-size:0.9rem;margin-top:8px}
-    form.contact input, form.contact textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(15,23,42,0.06);margin-top:6px}
-    form.contact button{margin-top:10px;padding:10px 12px;border-radius:10px;background:linear-gradient(90deg,var(--accent),var(--accent-3));border:none;color:white;font-weight:700;cursor:pointer}
+      /* ---------- Gallery / Slideshow ---------- */
+      .gallery {
+        margin-top: 18px;
+        background: var(--card);
+        padding: 14px;
+        border-radius: 12px;
+        box-shadow: var(--shadow);
+      }
+      .slideshow {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+      }
+      .slides {
+        display: flex;
+        transition: transform 0.6s cubic-bezier(0.2, 0.9, 0.2, 1);
+      }
+      .slide {
+        min-width: 100%;
+        height: 280px;
+        background-size: cover;
+        background-position: center;
+      }
+      .slideshow .dots {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 12px;
+        display: flex;
+        gap: 8px;
+      }
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.6);
+        cursor: pointer;
+      }
+      .dot.active {
+        background: var(--accent-2);
+      }
 
-    /* ---------- Footer ---------- */
-    footer.site-footer{position:fixed;left:0;right:0;bottom:0;background:linear-gradient(90deg,var(--accent),var(--accent-3));color:white;padding:12px 18px;display:flex;align-items:center;justify-content:center}
+      /* ---------- Bible verse / contact ---------- */
+      .grid-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+        margin-top: 18px;
+      }
 
-    /* Misc */
-    .badge{display:inline-block;padding:6px 8px;border-radius:8px;background:rgba(59,130,246,0.08);font-weight:700}
-    .muted{color:var(--muted)}
-    .center{display:flex;align-items:center;justify-content:center}
-    .hidden{display:none}
+      .bottoms {
+        margin-bottom: 5rem;
+      }
+      .verse {
+        background: linear-gradient(
+          180deg,
+          rgba(59, 130, 246, 0.06),
+          rgba(245, 158, 11, 0.03)
+        );
+        padding: 18px;
+        border-radius: 12px;
+      }
+      .verse blockquote {
+        margin: 0;
+        font-weight: 600;
+      }
 
-    /* small screens adjustments */
-    @media (max-width:480px){
-      .brand h1{font-size:1rem}
-      nav.primary{display:none}
-    }
+      form.contact {
+        background: var(--card);
+        padding: 14px;
+        border-radius: 12px;
+        box-shadow: var(--shadow);
+      }
+      form.contact label {
+        display: block;
+        font-size: 0.9rem;
+        margin-top: 8px;
+      }
+      form.contact input,
+      form.contact textarea {
+        width: 100%;
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid rgba(15, 23, 42, 0.06);
+        margin-top: 6px;
+      }
+      form.contact button {
+        margin-top: 10px;
+        padding: 10px 12px;
+        border-radius: 10px;
+        background: linear-gradient(90deg, var(--accent), var(--accent-3));
+        border: none;
+        color: white;
+        font-weight: 700;
+        cursor: pointer;
+      }
 
-  </style>
-</head>
-<body>
-  <div class="container">
-    <header class="site-header" role="banner">
-      <div class="brand">
-        <div class="logo">AF</div>
+      /* ---------- Footer ---------- */
+      footer.site-footer {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 15vh;
+        background: linear-gradient(90deg, var(--accent), var(--accent-3));
+        color: white;
+        padding: 12px 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Misc */
+      .badge {
+        display: inline-block;
+        padding: 6px 8px;
+        border-radius: 8px;
+        background: rgba(59, 130, 246, 0.08);
+        color: var(--others);
+        font-weight: 700;
+      }
+      .muted {
+        color: var(--muted);
+      }
+      .center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .hidden {
+        display: none;
+      }
+
+      /* small screens adjustments */
+      @media (max-width: 480px) {
+        .brand h1 {
+          font-size: 1rem;
+        }
+        nav.primary {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="site-header" role="banner">
+        <div class="brand">
+          <div class="logo">AF</div>
+          <div>
+            <h1>AMIE FAMILY</h1>
+            <p class="muted">One Family in Christ, Unity in Love</p>
+          </div>
+        </div>
+
+        <nav class="primary" role="navigation" aria-label="Main navigation">
+          <a href="#home">Home</a>
+          <a href="#members">Members</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#events">Events</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="controls">
+          <div class="btn small" id="whatsappBtn" title="Contact on WhatsApp">
+            📱 WhatsApp
+          </div>
+          <div class="btn small" id="themeToggle" aria-pressed="false">
+            <div class="switch" aria-hidden="true">
+              <div class="knob"></div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- HERO + QUICK -->
+      <section class="hero" id="home">
+        <div class="welcome" role="region" aria-label="Welcome">
+          <div class="inner">
+            <span class="slogan">One Family in Christ</span>
+            <h2>Welcome to AMIE FAMILY</h2>
+            <p>
+              We are a family of believers who seek unity and serve how God
+              guides us. Explore our members, events, gallery and get in touch.
+            </p>
+            <div
+              style="
+                margin-top: 14px;
+                display: flex;
+                gap: 10px;
+                flex-wrap: wrap;
+              "
+            >
+              <a class="btn" href="#members">See Members</a>
+              <a class="btn" href="#contact">Join / Contact</a>
+            </div>
+          </div>
+        </div>
+
+        <aside class="quick-card">
+          <h3>Quick Updates</h3>
+          <div class="announcements" style="margin-top: 8px">
+            <div
+              style="
+                width: 6px;
+                height: 44px;
+                border-radius: 6px;
+                background: var(--accent-2);
+              "
+            ></div>
+            <div class="ticker">
+              <p id="tickerText">
+                Welcome to AMIE FAMILY — Sunday worship this week at 10:00AM •
+                New youth Bible study on Friday • Pray for our sick brother
+                John.
+              </p>
+            </div>
+          </div>
+
+          <div style="margin-top: 12px; display: flex; gap: 8px">
+            <div class="badge">
+              Members <strong style="margin-left: 6px">17</strong>
+            </div>
+            <div class="others" style="margin-left: auto">
+              Updated: <strong id="updatedAt">Nov 30, 2025</strong>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <!-- MEMBERS -->
+      <section id="members">
+        <h2 style="margin-top: 18px">Our Members</h2>
+        <p class="muted">
+          Click a member to view more details. Each profile shows photo, name,
+          phone and place of study.
+        </p>
+
+        <div class="members" id="membersGrid" role="list">
+          <!-- JS will render 17 members here -->
+        </div>
+      </section>
+
+      <!-- GALLERY / SLIDESHOW -->
+      <section id="gallery" class="gallery">
+        <h2>Gallery</h2>
+        <div class="slideshow" aria-roledescription="carousel">
+          <div class="slides" id="slides">
+            <div
+              class="slide"
+              style="background-image: url('4Q0B9823.jpg')"
+            ></div>
+            <div
+              class="slide"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1508873699372-7ae48f9a5f3e?auto=format&fit=crop&w=1200&q=60');
+              "
+            ></div>
+            <div
+              class="slide"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1474978520636-2df2b8f0afea?auto=format&fit=crop&w=1200&q=60');
+              "
+            ></div>
+          </div>
+          <div class="dots" id="dots"></div>
+        </div>
+
+        <div style="margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap">
+          <button class="btn small" id="prev">◀ Prev</button>
+          <button class="btn small" id="next">Next ▶</button>
+        </div>
+      </section>
+
+      <!-- EVENTS / Updates -->
+      <section id="events" style="margin-top: 18px">
+        <h2>Events & Updates</h2>
+        <div class="grid-2">
+          <div class="card quick-card">
+            <h3>Upcoming Events</h3>
+            <ul>
+              <li>
+                <strong>Dec 7, 2025</strong> — Family Charity Day & Worship
+              </li>
+              <li><strong>Dec 20, 2025</strong> — End-of-year Thanksgiving</li>
+              <li><strong>Jan 3, 2026</strong> — Bible Study Kickoff</li>
+            </ul>
+          </div>
+
+          <div class="card quick-card">
+            <h3>Past Members</h3>
+            <p class="muted">
+              We honour past members who served faithfully. (Click to view
+              historical notes)
+            </p>
+            <button
+              class="btn small"
+              onclick="alert('Past Members page — add details here')"
+            >
+              View Past Members
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- VERSE & CONTACT -->
+      <section id="about" class="grid-2 bottoms">
+        <div class="verse">
+          <h3>Bible Verse</h3>
+          <blockquote>
+            "Behold, how good and pleasant it is when brothers dwell in unity!"
+            — Psalm 133:1 (ESV)
+          </blockquote>
+          <p class="muted" style="margin-top: 8px">
+            Our family lives by this verse as the foundation of our unity and
+            service.
+          </p>
+        </div>
+
         <div>
-          <h1>AMIE FAMILY</h1>
-          <p class="muted">One Family in Christ, Unity in Love</p>
+          <h3 id="contact">Contact Us</h3>
+          <form
+            class="contact"
+            id="contactForm"
+            onsubmit="return handleContact(event)"
+          >
+            <label for="name">Your name</label>
+            <input id="name" required />
+
+            <label for="email">Email</label>
+            <input id="email" type="email" required />
+
+            <label for="message">Message</label>
+            <textarea id="message" rows="4" required></textarea>
+
+            <button type="submit">Send Message</button>
+          </form>
         </div>
-      </div>
+      </section>
+    </div>
 
-      <nav class="primary" role="navigation" aria-label="Main navigation">
-        <a href="#home">Home</a>
-        <a href="#members">Members</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#events">Events</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </nav>
+    <footer class="site-footer">
+      <div>© AMIE FAMILY — One Family in Christ • Unity in Love</div>
+    </footer>
 
-      <div class="controls">
-        <div class="btn small" id="whatsappBtn" title="Contact on WhatsApp">📱 WhatsApp</div>
-        <div class="btn small" id="themeToggle" aria-pressed="false">
-          <div class="switch" aria-hidden="true"><div class="knob"></div></div>
-        </div>
-      </div>
-    </header>
+    <script>
+      /* ---------- Data: 17 family members ---------- */
+      const members = [
+        {
+          name: "Olivier Ndihokubwayo",
+          phone: "+250786718716",
+          study: "Theology — Tumba College",
+          img: "4Q0B9823.jpg",
+        },
+        {
+          name: "Grace Uwimana",
+          phone: "+250788234111",
+          study: "Nursing — University",
+          img: "https://i.pravatar.cc/300?img=2",
+        },
+        {
+          name: "Jean Bosco",
+          phone: "+250785001234",
+          study: "Business — College",
+          img: "https://i.pravatar.cc/300?img=3",
+        },
+        {
+          name: "Martha Mukamana",
+          phone: "+250786001234",
+          study: "Education — Institute",
+          img: "https://i.pravatar.cc/300?img=4",
+        },
+        {
+          name: "Samuel Kamanzi",
+          phone: "+250788776655",
+          study: "IT — Polytechnic",
+          img: "https://i.pravatar.cc/300?img=5",
+        },
+        {
+          name: "Ruth Nyiramana",
+          phone: "+250783445566",
+          study: "Law — University",
+          img: "https://i.pravatar.cc/300?img=6",
+        },
+        {
+          name: "Paul Nshimiyimana",
+          phone: "+250780998877",
+          study: "Agriculture — College",
+          img: "https://i.pravatar.cc/300?img=7",
+        },
+        {
+          name: "Esther Bizimana",
+          phone: "+250782334455",
+          study: "Social Work — Institute",
+          img: "https://i.pravatar.cc/300?img=8",
+        },
+        {
+          name: "Emmanuel Mukeshimana",
+          phone: "+250789112233",
+          study: "Engineering — University",
+          img: "https://i.pravatar.cc/300?img=9",
+        },
+        {
+          name: "Alice Ingabire",
+          phone: "+250786223344",
+          study: "Journalism — College",
+          img: "https://i.pravatar.cc/300?img=10",
+        },
+        {
+          name: "Kevin Tuyishime",
+          phone: "+250787556677",
+          study: "Music — Conservatory",
+          img: "https://i.pravatar.cc/300?img=11",
+        },
+        {
+          name: "Lydia Mukarubibi",
+          phone: "+250781223344",
+          study: "Pharmacy — University",
+          img: "https://i.pravatar.cc/300?img=12",
+        },
+        {
+          name: "Olivette Habyarimana",
+          phone: "+250789998877",
+          study: "Art & Design — Institute",
+          img: "https://i.pravatar.cc/300?img=13",
+        },
+        {
+          name: "Donatien Habimana",
+          phone: "+250788001122",
+          study: "Economics — College",
+          img: "https://i.pravatar.cc/300?img=14",
+        },
+        {
+          name: "Florence Niyonzima",
+          phone: "+250786554433",
+          study: "Psychology — University",
+          img: "https://i.pravatar.cc/300?img=15",
+        },
+        {
+          name: "Isaac Gatera",
+          phone: "+250782998811",
+          study: "Mechanics — Technical School",
+          img: "https://i.pravatar.cc/300?img=16",
+        },
+        {
+          name: "Beatrice Nyiransabimana",
+          phone: "+250780123456",
+          study: "Primary Teaching — Institute",
+          img: "https://i.pravatar.cc/300?img=17",
+        },
+      ];
 
-    <!-- HERO + QUICK -->
-    <section class="hero" id="home">
-      <div class="welcome" role="region" aria-label="Welcome">
-        <div class="inner">
-          <span class="slogan">One Family in Christ</span>
-          <h2>Welcome to AMIE FAMILY</h2>
-          <p>We are a family of believers who seek unity and serve how God guides us. Explore our members, events, gallery and get in touch.</p>
-          <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
-            <a class="btn" href="#members">See Members</a>
-            <a class="btn" href="#contact">Join / Contact</a>
-          </div>
-        </div>
-      </div>
+      const membersGrid = document.getElementById("membersGrid");
 
-      <aside class="quick-card">
-        <h3>Quick Updates</h3>
-        <div class="announcements" style="margin-top:8px">
-          <div style="width:6px;height:44px;border-radius:6px;background:var(--accent-2)"></div>
-          <div class="ticker">
-            <p id="tickerText">Welcome to AMIE FAMILY — Sunday worship this week at 10:00AM • New youth Bible study on Friday • Pray for our sick brother John.</p>
-          </div>
-        </div>
-
-        <div style="margin-top:12px;display:flex;gap:8px">
-          <div class="badge">Members <strong style="margin-left:6px">17</strong></div>
-          <div class="muted" style="margin-left:auto">Updated: <strong id="updatedAt">Nov 30, 2025</strong></div>
-        </div>
-      </aside>
-    </section>
-
-    <!-- MEMBERS -->
-    <section id="members">
-      <h2 style="margin-top:18px">Our Members</h2>
-      <p class="muted">Click a member to view more details. Each profile shows photo, name, phone and place of study.</p>
-
-      <div class="members" id="membersGrid" role="list">
-        <!-- JS will render 17 members here -->
-      </div>
-    </section>
-
-    <!-- GALLERY / SLIDESHOW -->
-    <section id="gallery" class="gallery">
-      <h2>Gallery</h2>
-      <div class="slideshow" aria-roledescription="carousel">
-        <div class="slides" id="slides">
-          <div class="slide" style="background-image:url('4Q0B9823.jpg')"></div>
-          <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1508873699372-7ae48f9a5f3e?auto=format&fit=crop&w=1200&q=60')"></div>
-          <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1474978520636-2df2b8f0afea?auto=format&fit=crop&w=1200&q=60')"></div>
-        </div>
-        <div class="dots" id="dots"></div>
-      </div>
-
-      <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
-        <button class="btn small" id="prev">◀ Prev</button>
-        <button class="btn small" id="next">Next ▶</button>
-      </div>
-    </section>
-
-    <!-- EVENTS / Updates -->
-    <section id="events" style="margin-top:18px">
-      <h2>Events & Updates</h2>
-      <div class="grid-2">
-        <div class="card quick-card">
-          <h3>Upcoming Events</h3>
-          <ul>
-            <li><strong>Dec 7, 2025</strong> — Family Charity Day & Worship</li>
-            <li><strong>Dec 20, 2025</strong> — End-of-year Thanksgiving</li>
-            <li><strong>Jan 3, 2026</strong> — Bible Study Kickoff</li>
-          </ul>
-        </div>
-
-        <div class="card quick-card">
-          <h3>Past Members</h3>
-          <p class="muted">We honour past members who served faithfully. (Click to view historical notes)</p>
-          <button class="btn small" onclick="alert('Past Members page — add details here')">View Past Members</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- VERSE & CONTACT -->
-    <section id="about" class="grid-2">
-      <div class="verse">
-        <h3>Bible Verse</h3>
-        <blockquote>"Behold, how good and pleasant it is when brothers dwell in unity!" — Psalm 133:1 (ESV)</blockquote>
-        <p class="muted" style="margin-top:8px">Our family lives by this verse as the foundation of our unity and service.</p>
-      </div>
-
-      <div>
-        <h3 id="contact">Contact Us</h3>
-        <form class="contact" id="contactForm" onsubmit="return handleContact(event)">
-          <label for="name">Your name</label>
-          <input id="name" required />
-
-          <label for="email">Email</label>
-          <input id="email" type="email" required />
-
-          <label for="message">Message</label>
-          <textarea id="message" rows="4" required></textarea>
-
-          <button type="submit">Send Message</button>
-        </form>
-      </div>
-    </section>
-
-  </div>
-
-  <footer class="site-footer">
-    <div>© AMIE FAMILY — One Family in Christ • Unity in Love</div>
-  </footer>
-
-  <script>
-    /* ---------- Data: 17 family members ---------- */
-    const members = [
-      {name:'Olivier Ndihokubwayo', phone:'+250786718716', study:'Theology — Tumba College', img:'4Q0B9823.jpg'},
-      {name:'Grace Uwimana', phone:'+250788234111', study:'Nursing — University', img:'https://i.pravatar.cc/300?img=2'},
-      {name:'Jean Bosco', phone:'+250785001234', study:'Business — College', img:'https://i.pravatar.cc/300?img=3'},
-      {name:'Martha Mukamana', phone:'+250786001234', study:'Education — Institute', img:'https://i.pravatar.cc/300?img=4'},
-      {name:'Samuel Kamanzi', phone:'+250788776655', study:'IT — Polytechnic', img:'https://i.pravatar.cc/300?img=5'},
-      {name:'Ruth Nyiramana', phone:'+250783445566', study:'Law — University', img:'https://i.pravatar.cc/300?img=6'},
-      {name:'Paul Nshimiyimana', phone:'+250780998877', study:'Agriculture — College', img:'https://i.pravatar.cc/300?img=7'},
-      {name:'Esther Bizimana', phone:'+250782334455', study:'Social Work — Institute', img:'https://i.pravatar.cc/300?img=8'},
-      {name:'Emmanuel Mukeshimana', phone:'+250789112233', study:'Engineering — University', img:'https://i.pravatar.cc/300?img=9'},
-      {name:'Alice Ingabire', phone:'+250786223344', study:'Journalism — College', img:'https://i.pravatar.cc/300?img=10'},
-      {name:'Kevin Tuyishime', phone:'+250787556677', study:'Music — Conservatory', img:'https://i.pravatar.cc/300?img=11'},
-      {name:'Lydia Mukarubibi', phone:'+250781223344', study:'Pharmacy — University', img:'https://i.pravatar.cc/300?img=12'},
-      {name:'Olivette Habyarimana', phone:'+250789998877', study:'Art & Design — Institute', img:'https://i.pravatar.cc/300?img=13'},
-      {name:'Donatien Habimana', phone:'+250788001122', study:'Economics — College', img:'https://i.pravatar.cc/300?img=14'},
-      {name:'Florence Niyonzima', phone:'+250786554433', study:'Psychology — University', img:'https://i.pravatar.cc/300?img=15'},
-      {name:'Isaac Gatera', phone:'+250782998811', study:'Mechanics — Technical School', img:'https://i.pravatar.cc/300?img=16'},
-      {name:'Beatrice Nyiransabimana', phone:'+250780123456', study:'Primary Teaching — Institute', img:'https://i.pravatar.cc/300?img=17'}
-    ];
-
-    const membersGrid = document.getElementById('membersGrid');
-
-    function renderMembers(){
-      membersGrid.innerHTML = '';
-      members.forEach((m, i) => {
-        const el = document.createElement('article');
-        el.className = 'member';
-        el.setAttribute('role','listitem');
-        el.innerHTML = `
+      function renderMembers() {
+        membersGrid.innerHTML = "";
+        members.forEach((m, i) => {
+          const el = document.createElement("article");
+          el.className = "member";
+          el.setAttribute("role", "listitem");
+          el.innerHTML = `
           <img src="${m.img}" alt="Photo of ${m.name}" loading="lazy" />
           <div class="meta">
             <h3>${m.name}</h3>
@@ -339,92 +800,124 @@
             <p><strong>Field of study:</strong> ${m.study}</p>
           </div>
         `;
-        // click to reveal more (simple animation)
-        el.addEventListener('click', () => {
-          el.classList.toggle('expanded');
-          if(el.querySelector('.more')) return; // avoid duplicate
-          const more = document.createElement('div');
-          more.className = 'more muted';
-          more.style.marginTop = '8px';
-          more.textContent = 'Active in: Worship team, Sunday school, Prayer meetings.';
-          el.querySelector('.meta').appendChild(more);
+          // click to reveal more (simple animation)
+          el.addEventListener("click", () => {
+            el.classList.toggle("expanded");
+            if (el.querySelector(".more")) return; // avoid duplicate
+            const more = document.createElement("div");
+            more.className = "more muted";
+            more.style.marginTop = "8px";
+            more.textContent =
+              "Active in: Worship team, Sunday school, Prayer meetings.";
+            el.querySelector(".meta").appendChild(more);
+          });
+          membersGrid.appendChild(el);
         });
-        membersGrid.appendChild(el);
-      });
-    }
-
-    renderMembers();
-
-    /* ---------- Slideshow ---------- */
-    const slides = document.getElementById('slides');
-    const dots = document.getElementById('dots');
-    const slideCount = slides.children.length;
-    let index = 0;
-
-    function createDots(){
-      for(let i=0;i<slideCount;i++){
-        const d = document.createElement('div'); d.className='dot'; d.dataset.i=i;
-        d.addEventListener('click',()=>{goTo(i)});
-        dots.appendChild(d);
       }
-      dots.children[0].classList.add('active');
-    }
-    function updateDots(){
-      Array.from(dots.children).forEach((d,idx)=>d.classList.toggle('active', idx===index));
-    }
-    function goTo(i){ index = (i+slideCount)%slideCount; slides.style.transform = `translateX(-${index*100}%)`; updateDots(); }
-    function next(){ goTo(index+1); }
-    function prev(){ goTo(index-1); }
 
-    document.getElementById('next').addEventListener('click', next);
-    document.getElementById('prev').addEventListener('click', prev);
-    createDots();
-    let slideTimer = setInterval(next, 5500);
+      renderMembers();
 
-    // pause on hover
-    slides.parentElement.addEventListener('mouseenter',()=>clearInterval(slideTimer));
-    slides.parentElement.addEventListener('mouseleave',()=>slideTimer=setInterval(next,5500));
+      /* ---------- Slideshow ---------- */
+      const slides = document.getElementById("slides");
+      const dots = document.getElementById("dots");
+      const slideCount = slides.children.length;
+      let index = 0;
 
-    /* ---------- Theme toggle (dark/light) ---------- */
-    const themeToggle = document.getElementById('themeToggle');
-    const body = document.body;
-    // initialize from localStorage
-    if(localStorage.getItem('amie-theme') === 'dark') body.classList.add('dark');
-    themeToggle.addEventListener('click',()=>{
-      body.classList.toggle('dark');
-      const isDark = body.classList.contains('dark');
-      themeToggle.setAttribute('aria-pressed', String(isDark));
-      localStorage.setItem('amie-theme', isDark ? 'dark' : 'light');
-    });
+      function createDots() {
+        for (let i = 0; i < slideCount; i++) {
+          const d = document.createElement("div");
+          d.className = "dot";
+          d.dataset.i = i;
+          d.addEventListener("click", () => {
+            goTo(i);
+          });
+          dots.appendChild(d);
+        }
+        dots.children[0].classList.add("active");
+      }
+      function updateDots() {
+        Array.from(dots.children).forEach((d, idx) =>
+          d.classList.toggle("active", idx === index)
+        );
+      }
+      function goTo(i) {
+        index = (i + slideCount) % slideCount;
+        slides.style.transform = `translateX(-${index * 100}%)`;
+        updateDots();
+      }
+      function next() {
+        goTo(index + 1);
+      }
+      function prev() {
+        goTo(index - 1);
+      }
 
-    /* ---------- WhatsApp button ---------- */
-    document.getElementById('whatsappBtn').addEventListener('click', ()=>{
-      // change the phone and message below to your preferred contact
-      const phone = '250780123456';
-      const text = encodeURIComponent('Hello AMIE FAMILY, I would like to contact you.');
-      window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
-    });
+      document.getElementById("next").addEventListener("click", next);
+      document.getElementById("prev").addEventListener("click", prev);
+      createDots();
+      let slideTimer = setInterval(next, 5500);
 
-    /* ---------- Contact form ---------- */
-    function handleContact(e){
-      e.preventDefault();
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const message = document.getElementById('message').value.trim();
-      if(!name||!email||!message){ alert('Please fill all fields'); return false; }
-      // For production: send to server via fetch. Here we simulate success.
-      alert('Thanks '+name+" — your message was sent (demo). We'll be in touch soon.");
-      e.target.reset();
-      return false;
-    }
+      // pause on hover
+      slides.parentElement.addEventListener("mouseenter", () =>
+        clearInterval(slideTimer)
+      );
+      slides.parentElement.addEventListener(
+        "mouseleave",
+        () => (slideTimer = setInterval(next, 5500))
+      );
 
-    /* ---------- Accessibility helpers ---------- */
-    // keyboard: press T to toggle theme
-    document.addEventListener('keydown', (ev)=>{ if(ev.key.toLowerCase()==='t') themeToggle.click(); });
+      /* ---------- Theme toggle (dark/light) ---------- */
+      const themeToggle = document.getElementById("themeToggle");
+      const body = document.body;
+      // initialize from localStorage
+      if (localStorage.getItem("amie-theme") === "dark")
+        body.classList.add("dark");
+      themeToggle.addEventListener("click", () => {
+        body.classList.toggle("dark");
+        const isDark = body.classList.contains("dark");
+        themeToggle.setAttribute("aria-pressed", String(isDark));
+        localStorage.setItem("amie-theme", isDark ? "dark" : "light");
+      });
 
-    /* ---------- Small polish: set updated date dynamically ---------- */
-    document.getElementById('updatedAt').textContent = new Date().toLocaleDateString();
+      /* ---------- WhatsApp button ---------- */
+      document.getElementById("whatsappBtn").addEventListener("click", () => {
+        // change the phone and message below to your preferred contact
+        const phone = "250780123456";
+        const text = encodeURIComponent(
+          "Hello AMIE FAMILY, I would like to contact you."
+        );
+        window.open(`https://wa.me/${phone}?text=${text}`, "_blank");
+      });
 
-  </script>
-</body>
+      /* ---------- Contact form ---------- */
+      function handleContact(e) {
+        e.preventDefault();
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const message = document.getElementById("message").value.trim();
+        if (!name || !email || !message) {
+          alert("Please fill all fields");
+          return false;
+        }
+        // For production: send to server via fetch. Here we simulate success.
+        alert(
+          "Thanks " +
+            name +
+            " — your message was sent (demo). We'll be in touch soon."
+        );
+        e.target.reset();
+        return false;
+      }
+
+      /* ---------- Accessibility helpers ---------- */
+      // keyboard: press T to toggle theme
+      document.addEventListener("keydown", (ev) => {
+        if (ev.key.toLowerCase() === "t") themeToggle.click();
+      });
+
+      /* ---------- Small polish: set updated date dynamically ---------- */
+      document.getElementById("updatedAt").textContent =
+        new Date().toLocaleDateString();
+    </script>
+  </body>
 </html>
