@@ -464,6 +464,26 @@
         display: none;
       }
 
+      /* Pop up */
+      .quick-card.popup {
+        position: fixed;
+        top: 15%;
+        left: 10%;
+        height: 50vh;
+        z-index: 99;
+        box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.338);
+      }
+
+      .block {
+        position: fixed;
+        background-color: #07102776;
+        backdrop-filter: blur(1deg);
+        -webkit-backdrop-filter: blur(1deg);
+        top: 0;
+        bottom: 0;
+        width: 100%;
+      }
+
       /* small screens adjustments */
       @media (max-width: 480px) {
         .brand h1 {
@@ -677,6 +697,36 @@
       <div>© AMIE FAMILY — One Family in Christ • Unity in Love</div>
     </footer>
 
+    <aside class="quick-card popup" id="popup">
+      <h3 class="others">Welcome in Amie family</h3>
+      <div class="announcements" style="margin-top: 8px">
+        <div
+          style="
+            width: 6px;
+            height: 44px;
+            border-radius: 6px;
+            background: var(--accent-2);
+          "
+        ></div>
+        <div class="">
+          <p id="">
+            Welcome to AMIE FAMILY — Sunday worship this week at 10:00AM • New
+            youth Bible study on Friday • Pray for our sick brother John.
+          </p>
+        </div>
+      </div>
+
+      <div style="margin-top: 12px; display: flex; gap: 8px">
+        <div class="badge">
+          Members <strong style="margin-left: 6px">17</strong>
+        </div>
+        <div class="others" style="margin-left: auto">
+          Updated: <strong id="updatedAt">Nov 30, 2025</strong>
+        </div>
+      </div>
+    </aside>
+    <div class="block" id="block"></div>
+
     <script>
       /* ---------- Data: 17 family members ---------- */
       const members = [
@@ -821,6 +871,8 @@
       const slides = document.getElementById("slides");
       const dots = document.getElementById("dots");
       const slideCount = slides.children.length;
+      const popup = document.querySelector("#popup");
+      const popBlock = document.querySelector("#block");
       let index = 0;
 
       function createDots() {
@@ -918,6 +970,11 @@
       /* ---------- Small polish: set updated date dynamically ---------- */
       document.getElementById("updatedAt").textContent =
         new Date().toLocaleDateString();
+      setInterval(() => {
+        popup.style.display = "none";
+        popBlock.style.display = "none";
+      }, 15000);
+      clearInterval();
     </script>
   </body>
 </html>
