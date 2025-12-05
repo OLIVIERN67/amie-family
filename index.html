@@ -98,6 +98,8 @@
 
       .others {
         color: var(--others);
+        color: green;
+        
       }
 
       .brand h1 {
@@ -183,7 +185,8 @@
         margin-top: 18px;
       }
       .welcome {
-        background-image: url("https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=60");
+        background-image: url("IMG_9661.jpg");
+        height: 30em;
         background-size: cover;
         background-position: center;
         border-radius: 14px;
@@ -252,7 +255,7 @@
       .ticker p {
         white-space: nowrap;
         display: inline-block;
-        animation: marquee 18s linear infinite;
+        animation: marquee 30s linear infinite;
       }
       @keyframes marquee {
         0% {
@@ -285,7 +288,7 @@
         transform: translateY(-6px);
       }
       .member img {
-        width: 92px;
+        width: 100px;
         height: 92px;
         border-radius: 10px;
         object-fit: cover;
@@ -346,11 +349,11 @@
       }
       .slides {
         display: flex;
-        transition: transform 0.6s cubic-bezier(0.2, 0.9, 0.2, 1);
+        transition: transform 0.5s cubic-bezier(0.2, 0.9, 0.2, 1);
       }
       .slide {
         min-width: 100%;
-        height: 280px;
+        height: 20em;
         background-size: cover;
         background-position: center;
       }
@@ -467,11 +470,16 @@
       /* Pop up */
       .quick-card.popup {
         position: fixed;
-        top: 15%;
-        left: 10%;
-        height: 50vh;
+        top: 8%;
+        left: 3%;
+        height: 80vh;
+        width: 72em;
         z-index: 99;
-        box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.338);
+        box-shadow: 2px 3px 5px rgba(0, 0, 8, 0.338);
+      }
+
+      .popup h3{
+        font-size: 10w0px;
       }
 
       .block {
@@ -532,8 +540,9 @@
       <section class="hero" id="home">
         <div class="welcome" role="region" aria-label="Welcome">
           <div class="inner">
-            <span class="slogan">One Family in Christ</span>
+            
             <h2>Welcome to AMIE FAMILY</h2>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
             <p>
               We are a family of believers who seek unity and serve how God
               guides us. Explore our members, events, gallery and get in touch.
@@ -557,7 +566,7 @@
           <div class="announcements" style="margin-top: 8px">
             <div
               style="
-                width: 6px;
+                width: 30px;
                 height: 44px;
                 border-radius: 6px;
                 background: var(--accent-2);
@@ -565,9 +574,7 @@
             ></div>
             <div class="ticker">
               <p id="tickerText">
-                Welcome to AMIE FAMILY — Sunday worship this week at 10:00AM •
-                New youth Bible study on Friday • Pray for our sick brother
-                John.
+                IMPAGARIKE YAWE NIWE MUBWIRIZA WA BUCECE!
               </p>
             </div>
           </div>
@@ -586,10 +593,7 @@
       <!-- MEMBERS -->
       <section id="members">
         <h2 style="margin-top: 18px">Our Members</h2>
-        <p class="muted">
-          Click a member to view more details. Each profile shows photo, name,
-          phone and place of study.
-        </p>
+       
 
         <div class="members" id="membersGrid" role="list">
           <!-- JS will render 17 members here -->
@@ -608,13 +612,27 @@
             <div
               class="slide"
               style="
-                background-image: url('https://images.unsplash.com/photo-1508873699372-7ae48f9a5f3e?auto=format&fit=crop&w=1200&q=60');
+                background-image: url('5.jpg');
+                position: relative;
               "
             ></div>
             <div
               class="slide"
               style="
-                background-image: url('https://images.unsplash.com/photo-1474978520636-2df2b8f0afea?auto=format&fit=crop&w=1200&q=60');
+                background-image: url('3.jpeg');
+              "
+            ></div>
+
+             <div
+              class="slide"
+              style="
+                background-image: url('3.jpg');
+              "
+            ></div>
+             <div
+              class="slide"
+              style="
+                background-image: url('4.jpg');
               "
             ></div>
           </div>
@@ -634,25 +652,66 @@
           <div class="card quick-card">
             <h3>Upcoming Events</h3>
             <ul>
-              <li>
-                <strong>Dec 7, 2025</strong> — Family Charity Day & Worship
-              </li>
-              <li><strong>Dec 20, 2025</strong> — End-of-year Thanksgiving</li>
-              <li><strong>Jan 3, 2026</strong> — Bible Study Kickoff</li>
+             
+              <li><strong>Dec 2025</strong> — End-of-year Thanks giving</li>
+              <li><strong>Jan  2026</strong> members Visit</li>
             </ul>
           </div>
 
           <div class="card quick-card">
             <h3>Past Members</h3>
             <p class="muted">
-              We honour past members who served faithfully. (Click to view
-              historical notes)
+
+              <section id="gallery" class="gallery">
+        
+        <div class="slideshow" aria-roledescription="carousel">
+          <div class="slides" id="slides">
+            <div
+              class="slide"
+              style="background-image: url('4Q0B9823.jpg')"
+            ></div>
+            <div
+              class="slide"
+              style="
+                background-image: url('5.jpg');
+                position: relative;
+              "
+            ></div>
+            <div
+              class="slide"
+              style="
+                background-image: url('3.jpeg');
+              "
+            ></div>
+
+             <div
+              class="slide"
+              style="
+                background-image: url('3.jpg');
+              "
+            ></div>
+             <div
+              class="slide"
+              style="
+                background-image: url('4.jpg');
+              "
+            ></div>
+          </div>
+          <div class="dots" id="dots"></div>
+        </div>
+
+        <!-- <div style="margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap">
+          <button class="btn small" id="prev">◀ Prev</button>
+          <button class="btn small" id="next">Next ▶</button>
+        </div> -->
+      </section>
+              We honour past members who served faithfully. 
             </p>
             <button
               class="btn small"
               onclick="alert('Past Members page — add details here')"
             >
-              View Past Members
+              View other Members
             </button>
           </div>
         </div>
@@ -663,13 +722,19 @@
         <div class="verse">
           <h3>Bible Verse</h3>
           <blockquote>
-            "Behold, how good and pleasant it is when brothers dwell in unity!"
-            — Psalm 133:1 (ESV)
+            "Be careful not to do your good deeds in front of people just to be seen by them, for if you do
+             so, you will have no reward from your Father in heaven." (Mathew 6:1)
           </blockquote>
           <p class="muted" style="margin-top: 8px">
-            Our family lives by this verse as the foundation of our unity and
-            service.
+            Character is shown by what you do when no one is watching
+          
           </p>
+          <ul>
+            <h3>Soma Nawe:</h3>
+            <li>Yosuwa 24:15</li>
+            <li>Abakolosayi 3:14</li>
+            <li>Kubara 6:24–26</li>
+          </ul>
         </div>
 
         <div>
@@ -699,30 +764,35 @@
     </footer>
 
     <aside class="quick-card popup" id="popup">
-      <h3 class="others">Welcome in Amie family</h3>
+      <h3 class="others" > <p style="font-size: 5em; margin-top: -0.5em;">AMIE FAMILY </p></h3>
+      
       <div class="announcements" style="margin-top: 8px">
         <div
           style="
-            width: 6px;
-            height: 44px;
+            width: 3px;
+            height: 34px;
             border-radius: 6px;
             background: var(--accent-2);
           "
         ></div>
+        
         <div class="">
           <p id="">
-            Welcome to AMIE FAMILY — Sunday worship this week at 10:00AM • New
-            youth Bible study on Friday • Pray for our sick brother John.
+           <p style="font-size: 2.5em; font-weight: bold;font-family: Verdana, Geneva, Tahoma, sans-serif;">
+            
+           
+          TWISHIMIYE KUBANA NAMWE!
+          </p>
           </p>
         </div>
       </div>
 
       <div style="margin-top: 12px; display: flex; gap: 8px">
         <div class="badge">
-          Members <strong style="margin-left: 6px">17</strong>
+          Members <strong style="margin-left: 6px;color: green;">17</strong>
         </div>
         <div class="others" style="margin-left: auto">
-          Updated: <strong id="updatedAt">Nov 30, 2025</strong>
+          Updated: <strong id="updatedAt">December 06, 2025</strong>
         </div>
       </div>
     </aside>
@@ -734,104 +804,101 @@
         {
           name: "Olivier Ndihokubwayo",
           phone: "+250786718716",
-          study: "Theology — Tumba College",
-          img: "4Q0B9823.jpg",
+          img: "IMG_9125.jpg",
         },
         {
-          name: "Grace Uwimana",
-          phone: "+250788234111",
-          study: "Nursing — University",
-          img: "https://i.pravatar.cc/300?img=2",
+          name: "Florence UWAJENEZA",
+          phone: "0787700365",
+          img: "mamf.jpg",
         },
         {
-          name: "Jean Bosco",
-          phone: "+250785001234",
-          study: "Business — College",
-          img: "https://i.pravatar.cc/300?img=3",
+          name: "Violette MUTUYIMANA ",
+          phone: " 0787098598",
+          
+          img: "mamv.jpg",
         },
         {
-          name: "Martha Mukamana",
-          phone: "+250786001234",
-          study: "Education — Institute",
-          img: "https://i.pravatar.cc/300?img=4",
+          name: "Fiston IMANIRAKOZE ",
+          phone: "0784100740",
+          img: "fiston.jpg",
         },
         {
-          name: "Samuel Kamanzi",
-          phone: "+250788776655",
-          study: "IT — Polytechnic",
-          img: "https://i.pravatar.cc/300?img=5",
+          name: "NIYODUSENGA Yefuta",
+          phone: "0791020442",
+          
+          img: "yefuta.jpg",
         },
         {
-          name: "Ruth Nyiramana",
-          phone: "+250783445566",
-          study: "Law — University",
-          img: "https://i.pravatar.cc/300?img=6",
+          name: "Felix UWIDUHAYE",
+          phone: "0784702606",
+        
+          img: "felix.jpg",
         },
         {
-          name: "Paul Nshimiyimana",
-          phone: "+250780998877",
-          study: "Agriculture — College",
-          img: "https://i.pravatar.cc/300?img=7",
+          name: "Kevin ISHIMWE ",
+          phone: " 0738381849",
+        
+          img: "kevin.jpg",
         },
         {
-          name: "Esther Bizimana",
-          phone: "+250782334455",
-          study: "Social Work — Institute",
-          img: "https://i.pravatar.cc/300?img=8",
+          name: " MURINDA KAYITESI Noella",
+          phone: "0733058948",
+          
+          img: "noella.jpg",
         },
         {
-          name: "Emmanuel Mukeshimana",
-          phone: "+250789112233",
-          study: "Engineering — University",
-          img: "https://i.pravatar.cc/300?img=9",
+          name: "INEZA Christa",
+          phone: "0789516090",
+        
+          img: "IMG_20250604_211617.jpg",
         },
         {
-          name: "Alice Ingabire",
-          phone: "+250786223344",
-          study: "Journalism — College",
-          img: "https://i.pravatar.cc/300?img=10",
+          name: "Jean Dela Croix",
+          phone: "0780581282",
+          
+          img: "WhatsApp Image 2025-12-03 at 12.58.16 PM.jpeg",
         },
         {
-          name: "Kevin Tuyishime",
-          phone: "+250787556677",
-          study: "Music — Conservatory",
-          img: "https://i.pravatar.cc/300?img=11",
+          name: "Teta Sabrine",
+          phone: "0799361103",
+         
+          img: "kadete.jpg",
         },
         {
-          name: "Lydia Mukarubibi",
-          phone: "+250781223344",
-          study: "Pharmacy — University",
-          img: "https://i.pravatar.cc/300?img=12",
+          name: " Marcel",
+          phone: "0790684125",
+          
+          img: "marcel.jpg",
         },
         {
-          name: "Olivette Habyarimana",
-          phone: "+250789998877",
-          study: "Art & Design — Institute",
-          img: "https://i.pravatar.cc/300?img=13",
+          name: "Eric",
+          phone: "0795115806",
+          
+          img: "eric.jpg",
         },
         {
-          name: "Donatien Habimana",
-          phone: "+250788001122",
-          study: "Economics — College",
-          img: "https://i.pravatar.cc/300?img=14",
+          name: "Die Donne ",
+          phone: "0789932660",
+          
+          img: "diedonne.jpg",
         },
         {
-          name: "Florence Niyonzima",
-          phone: "+250786554433",
-          study: "Psychology — University",
-          img: "https://i.pravatar.cc/300?img=15",
+          name: "Denys MUNEZERO",
+          phone: "0780679441",
+          
+          img: "denys.jpg",
         },
         {
-          name: "Isaac Gatera",
-          phone: "+250782998811",
-          study: "Mechanics — Technical School",
-          img: "https://i.pravatar.cc/300?img=16",
+          name: "GAMBIRA Yves Ntwari",
+          phone: "0798489110",
+          
+          img: "gambira.jpg",
         },
         {
-          name: "Beatrice Nyiransabimana",
-          phone: "+250780123456",
-          study: "Primary Teaching — Institute",
-          img: "https://i.pravatar.cc/300?img=17",
+          name: "IRIHO OLIVIER",
+          phone: "0785071037",
+         
+          img: "olivier.jpg",
         },
       ];
 
